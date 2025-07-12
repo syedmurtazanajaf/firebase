@@ -15,9 +15,9 @@ let login = () => {
             // ...
         })
         .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorMessage, errorCode)
+        
+            console.log(error.message)
+            alert(error.message)
         });
 
 }
@@ -33,7 +33,7 @@ onAuthStateChanged(auth, (user) => {
 
         const uid = user.uid;
         console.log("user login")
-                    // location.href="./todo.html"
+                    location.href="./todo.html"
     } else {
 
     }
