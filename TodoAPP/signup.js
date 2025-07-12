@@ -10,10 +10,12 @@ import { auth, createUserWithEmailAndPassword } from "./firebase.js"
         .then((userCredential) => {
             const user = userCredential.user;
             console.log(user)
+            alert(user)
             location.href = "./index.html"
         })
         .catch((error) => {
             console.log(error.message)
+            alert(error.message)
         });
 
     });
