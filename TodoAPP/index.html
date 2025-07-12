@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List App</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div class="container">
-        <div class="todo-app">
-            <h2>To-Do List <img src="./images/icon.png"></h2>
-            <div class="row">
-                <input type="text" id="input-box" placeholder="Add your text">
-                <button id="addBtn">Add</button>
-            </div>
-            <ul id="list-container">
-                <!-- <li class="checked">Task 1</li>
-                <li>Task 2</li>
-                <li>Task 3</li> -->
-            </ul>
-        </div>
-    </div>
 
+   <div class="login-container">
+    <h1>Login</h1>
+    
+    <input type="email" id="L_email" placeholder="Enter your email" />
+    <input type="password" id="L_password" placeholder="Enter your password" />
+    
+    <button id="loginBtn">Login</button>
+    <button class="google-btn" id="google">Login with Google</button>
+
+    <div class="signup-text">
+      <p>Don't have an account? 
+        <button id="signupBtn">Sign up</button>
+      </p>
+    </div>
+  </div>
 
 </body>
 <script src="app.js" type="module"></script>
+<script src="firebase.js"  type="module"></script>
 
 </html>

@@ -1,114 +1,65 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyA7yi-98CXHBeZS0x4o6KBsksExu-lHYIA",
-    authDomain: "todoapp-38bb0.firebaseapp.com",
-    projectId: "todoapp-38bb0",
-    storageBucket: "todoapp-38bb0.appspot.com",
-    messagingSenderId: "636663796838",
-    appId: "1:636663796838:web:2f4a753af03711155389a7"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-// Initialize Cloud Firestore and get a reference to the service
-const db = getFirestore(app);
+import { auth, signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, provider  } from "./firebase.js"
 
 
 
-// TODO APP
+let login = () => {
+    let L_email = document.querySelector("#L_email").value
+    let L_password = document.querySelector("#L_password").value
+    signInWithEmailAndPassword(auth, L_email, L_password)
 
-const inputBox = document.getElementById("input-box");
-const listContainer = document.getElementById("list-container");
-const addBtn = document.querySelector("#addBtn");
-const todoCollection = collection(db, "todos")
-
-addBtn.addEventListener("click", addTask)
-
-window.addEventListener("load", getTodos )
-
-
-async function getTodos() {
-    try {
-        let arr = []
-        const querySnapshot = await getDocs(todoCollection)
-        querySnapshot.forEach(function(doc) {
-            console.log(doc.id, doc.data());
-            arr.push({
-                id: doc.id,
-                todo: doc.data()
-            })
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            console.log(user);
+                        location.href="./todo.html"
+            // ...
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorMessage, errorCode)
         });
 
-        console.log(arr);
-
-    } catch (error) {
-        console.log(error.message)
-        alert(error.message)
-
-
-    }
 }
 
-async function addTask() {
-    try {
+document.querySelector("#loginBtn").addEventListener("click", login)
 
 
 
-        if (!inputBox.value.trim()) {
-            alert("You must write someything!")
-            return;
-        }
+// it will check for this PC if the person is login it will show user exists
 
-        const data = {
-            todo: inputBox.value.trim()
-        }
+onAuthStateChanged(auth, (user) => {
+    if (user) {
 
-        const docRef = await addDoc(todoCollection, data)
-        console.log("Document written with ID: ", docRef.id);
-
-
-        let li = document.createElement("li");
-        li.innerHTML = inputBox.value;
-        listContainer.appendChild(li);
-        let span = document.createElement("span");
-        span.innerHTML = "\u00d7";
-        li.appendChild(span);
-
-        inputBox.value = '';
-        saveData();
-
-    } catch (error) {
-        console.log(error.message);
-        alert(error.message)
+        const uid = user.uid;
+        console.log("user login")
+                    // location.href="./todo.html"
+    } else {
 
     }
+});
 
+let loginGoogle = () =>{
+    signInWithPopup(auth, provider)
+  .then((result) => {
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    const user = result.user;
+    location.href = "./todo.html"
+
+  }).catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    const email = error.customData.email;
+    const credential = GoogleAuthProvider.credentialFromError(error);
+  });
 
 }
 
-listContainer.addEventListener("click", function (e) {
-    if (e.target.tagName === "LI") {
-        e.target.classList.toggle('checked');
-        saveData();
-    }
-    else if (e.target.tagName === "SPAN") {
-        e.target.parentElement.remove();
-        saveData();
-    }
-}, false);
+document.querySelector("#google").addEventListener("click", loginGoogle)
 
-function saveData() {
-    localStorage.setItem("data", listContainer.innerHTML)
-}
 
-function showTask() {
-    listContainer.innerHTML = localStorage.getItem("data");
-}
-showTask();
+
+document.querySelector("#signupBtn").addEventListener("click", () =>{
+    window.location.href = "./signup.html"
+})
