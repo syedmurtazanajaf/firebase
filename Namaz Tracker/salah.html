@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <div class="date-picker-container">
+  <label for="datePicker">Select Date:</label>
+  <input type="date" id="datePicker" />
+</div>
+
+
+    <h2 id="todayDate"></h2>
+
+<div class="prayer-list">
+  <div class="prayer" onclick="openModal('Fajr')">🌙 Fajr</div>
+  <div class="prayer" onclick="openModal('Dhuhr')">☀️ Dhuhr</div>
+  <div class="prayer" onclick="openModal('Asr')">🌤 Asr</div>
+  <div class="prayer" onclick="openModal('Maghrib')">🌇 Maghrib</div>
+  <div class="prayer" onclick="openModal('Isha')">🌙 Isha</div>
+</div>
+
+<!-- Modal -->
+<div id="modal" class="hidden">
+  <h3 id="modalTitle"></h3>
+  <button onclick="saveStatus('Not prayed')">🚫 Not prayed</button>
+  <button onclick="saveStatus('Late')">⏰ Late</button>
+  <button onclick="saveStatus('On time')">✅ On time</button>
+  <button onclick="saveStatus('In jamaah')">🕌 In jamaah</button>
+  <button onclick="closeModal()">Cancel</button>
+</div>
+
+
+</body>
+<script type="module" src="salah.js"></script>
+</html>

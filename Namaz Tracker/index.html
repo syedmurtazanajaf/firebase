@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="login-container">
+    <button class="dark-mode-toggle" id="darkToggle">🌙 Dark</button>
+    <h1>Login</h1>
+
+    <input type="email" placeholder="Enter Email Address..." id="email" required />
+
+    <div class="password-container">
+      <input type="password" placeholder="Enter Password..." id="pass" required />
+      <span class="toggle-password" id="togglePass">Show</span>
+    </div>
+
+    <button id="loginBtn">Login</button>
+
+    <p>Don't have an account? <a href="./signup.html">Sign up</a></p>
+    <div class="message" id="message"></div>
+  </div>
+
+
+
+
+  <script>
+    const loginBtn = document.getElementById("loginBtn");
+    const emailInput = document.getElementById("email");
+    const passInput = document.getElementById("pass");
+    const message = document.getElementById("message");
+    const togglePass = document.getElementById("togglePass");
+    const darkToggle = document.getElementById("darkToggle");
+    const body = document.body;
+
+    // Toggle password visibility
+    togglePass.addEventListener("click", () => {
+      const type = passInput.getAttribute("type") === "password" ? "text" : "password";
+      passInput.setAttribute("type", type);
+      togglePass.textContent = type === "password" ? "Show" : "Hide";
+    });
+
+    // Toggle dark mode
+    darkToggle.addEventListener("click", () => {
+      body.classList.toggle("dark");
+    });
+
+    // Basic form validation
+    loginBtn.addEventListener("click", () => {
+      const email = emailInput.value.trim();
+      const password = passInput.value.trim();
+
+      if (!email || !password) {
+        showMessage("Please fill in all fields", "error");
+      } else if (!validateEmail(email)) {
+        showMessage("Enter a valid email", "error");
+      } else if (password.length < 6) {
+        showMessage("Password must be at least 6 characters", "error");
+      } else {
+        showMessage("Login successful!", "success");
+        // you can redirect from here
+      }
+    });
+
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+
+    function showMessage(msg, type) {
+      message.textContent = msg;
+      message.className = `message ${type}`;
+    }
+  </script>
+
+</body>
+<script type="module" src="app.js"></script>
+
+</html>

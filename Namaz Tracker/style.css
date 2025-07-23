@@ -1,0 +1,381 @@
+
+
+
+* {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      transition: background-color 0.3s ease;
+    }
+
+    body.dark {
+      background-color: #121212;
+      color: #ffffff;
+    }
+
+
+    /* login page start */
+
+    .login-container {
+      background-color: #ffffff;
+      padding: 40px 30px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      position: relative;
+      transition: background-color 0.3s ease;
+    }
+
+    body.dark .login-container {
+      background-color: #1f1f1f;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 12px;
+      margin-bottom: 18px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+    }
+
+    .password-container {
+      position: relative;
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 13px;
+      color: #888;
+      user-select: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    p {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 14px;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .message {
+      margin-top: 12px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .error {
+      color: red;
+    }
+
+    .success {
+      color: green;
+    }
+
+    .dark-mode-toggle {
+      position: absolute;
+      top: -20px;
+      right: 50%;
+      transform: translateX(50%);
+      padding: 6px 14px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .dark .dark-mode-toggle {
+      background-color: #333;
+      color: #fff;
+    }
+
+
+
+    /* signup page start */
+
+
+    .signup-container {
+      background-color: #ffffff;
+      padding: 40px 30px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      position: relative;
+      transition: background-color 0.3s ease;
+    }
+
+    body.dark .signup-container {
+      background-color: #1f1f1f;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 12px;
+      margin-bottom: 18px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+    }
+
+    .password-container {
+      position: relative;
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 13px;
+      color: #888;
+      user-select: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: #28a745;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    p {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 14px;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .message {
+      margin-top: 12px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .error {
+      color: red;
+    }
+
+    .success {
+      color: green;
+    }
+
+    .dark-mode-toggle {
+      position: absolute;
+      top: -20px;
+      right: 50%;
+      transform: translateX(50%);
+      padding: 6px 14px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .dark .dark-mode-toggle {
+      background-color: #333;
+      color: #fff;
+    }
+
+
+    /* Salah App Start */
+
+
+    h2 {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 24px;
+  color: #007bff;
+}
+
+.prayer-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+}
+
+.prayer {
+  background-color: #ffffff;
+  width: 90%;
+  max-width: 400px;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.prayer:hover {
+  transform: scale(1.02);
+  background-color: #e6f0ff;
+}
+
+/* Modal Styles */
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+#modal.hidden {
+  display: none;
+}
+
+#modal h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+#modal button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+#modal button:hover {
+  background-color: #0056b3;
+}
+
+/* Special Buttons (Cancel, Not Prayed, etc.) */
+#modal button:nth-child(5) {
+  background-color: #6c757d;
+}
+
+#modal button:nth-child(1) {
+  background-color: #dc3545; /* Not Prayed = red */
+}
+
+#modal button:nth-child(2) {
+  background-color: #ffc107; /* Late = yellow */
+  color: black;
+}
+
+#modal button:nth-child(3) {
+  background-color: #28a745; /* On time = green */
+}
+
+#modal button:nth-child(4) {
+  background-color: #17a2b8; /* Jamaah = blue */
+}
+
+
+
+.date-picker-container {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+#datePicker {
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+}
