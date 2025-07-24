@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+import { getFirestore,collection,getDocs} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged   } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
 
@@ -33,4 +33,6 @@ export{
     signInWithEmailAndPassword,
     onAuthStateChanged ,
     db,
+    collection,
+    getDocs,
 }

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+
+ <nav class="navbar">
+        <div class="navbar-brand">
+            <span class="icon">🕌</span>
+            Prayer Tracker
+        </div>
+
+        <a href="./salah.html">Home</a>
+        <a href="./history.html">History</a>
+
+        <button class="signout-btn" id="signoutBtn">
+            <span>🚪</span>
+            Sign Out
+        </button>
+    </nav>
+
+ <div class="history-container">
+        <div class="history-title">Your Prayer History</div>
+        
+        <!-- <div class="stats-overview">
+            <div class="stat-card">
+                <div class="stat-number completed">85%</div>
+                <div class="stat-label">Completion Rate</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" style="color: #4caf50;">23</div>
+                <div class="stat-label">Prayers Completed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" style="color: #ff9800;">4</div>
+                <div class="stat-label">Late Prayers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" style="color: #f44336;">8</div>
+                <div class="stat-label">Missed Prayers</div>
+            </div>
+        </div> -->
+
+        <div id="historyList">
+            <!-- Sample Data -->
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-date">Today - July 24, 2025</div>
+                    <div class="day-summary">
+                        <span class="summary-item">4/5 Completed</span>
+                        <span class="summary-item">1 Remaining</span>
+                    </div>
+                </div>
+                <div class="prayers-grid">
+                    <div class="prayer-card">
+                        <div class="prayer-name">
+                            <span class="prayer-icon completed"></span>
+                            Fajr
+                        </div>
+                        <div class="prayer-details">
+                            <span class="status completed">Completed</span>
+                            <span class="prayer-time">05:30 AM</span>
+                        </div>
+                    </div>
+                    <div class="prayer-card">
+                        <div class="prayer-name">
+                            <span class="prayer-icon completed"></span>
+                            Dhuhr
+                        </div>
+                        <div class="prayer-details">
+                            <span class="status completed">Completed</span>
+                            <span class="prayer-time">01:15 PM</span>
+                        </div>
+                    </div>
+                    <div class="prayer-card">
+                        <div class="prayer-name">
+                            <span class="prayer-icon late"></span>
+                            Asr
+                        </div>
+                        <div class="prayer-details">
+                            <span class="status late">Late</span>
+                            <span class="prayer-time">05:45 PM</span>
+                        </div>
+                    </div>
+                    <div class="prayer-card">
+                        <div class="prayer-name">
+                            <span class="prayer-icon completed"></span>
+                            Maghrib
+                        </div>
+                        <div class="prayer-details">
+                            <span class="status completed">Completed</span>
+                            <span class="prayer-time">07:20 PM</span>
+                        </div>
+                    </div>
+                    <div class="prayer-card">
+                        <div class="prayer-name">
+                            <span class="prayer-icon notset"></span>
+                            Isha
+                        </div>
+                        <div class="prayer-details">
+                            <span class="status notset">Pending</span>
+                            <span class="prayer-time">08:45 PM</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-date">Yesterday - July 23, 2025</div>
+                    <div class="day-summary">
+                        <span class="summary-item">3/5 Completed</span>
+                        <span class="summary-item">2 Missed</span>
+                    </div>
+                </div>
+                <div class="prayers-grid">
+                    <div class="prayer-card">
+                        <div class="prayer-name">
+                            <span class="prayer-icon missed"></span>
+                            Fajr
+                        </div>
+                        <div class="prayer-details">
+                            <span class="status missed">Missed</span>
+                            <span class="prayer-time">05:30 AM</span>
+                        </div>
+                    </div>
+                    <div class="prayer-card">
+                        <div class="prayer-name">
+                            <span class="prayer-icon completed"></span>
+                            Dhuhr
+                        </div>
+                        <div class="prayer-details">
+                            <span class="status completed">Completed</span>
+                            <span class="prayer-time">01:15 PM</span>
+                        </div>
+                    </div>
+                    <div class="prayer-card">
+                        <div class="prayer-name">
+                            <span class="prayer-icon completed"></span>
+                            Asr
+                        </div>
+                        <div class="prayer-details">
+                            <span class="status completed">Completed</span>
+                            <span class="prayer-time">05:40 PM</span>
+                        </div>
+                    </div>
+                    <div class="prayer-card">
+                        <div class="prayer-name">
+                            <span class="prayer-icon completed"></span>
+                            Maghrib
+                        </div>
+                        <div class="prayer-details">
+                            <span class="status completed">Completed</span>
+                            <span class="prayer-time">07:18 PM</span>
+                        </div>
+                    </div>
+                    <div class="prayer-card">
+                        <div class="prayer-name">
+                            <span class="prayer-icon missed"></span>
+                            Isha
+                        </div>
+                        <div class="prayer-details">
+                            <span class="status missed">Missed</span>
+                            <span class="prayer-time">08:43 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="module" src="history.js"></script>
+
+</html>

@@ -1,41 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <span class="icon">🕌</span>
+            Prayer Tracker
+        </div>
 
-    <div class="date-picker-container">
-  <label for="datePicker">Select Date:</label>
-  <input type="date" id="datePicker" />
-</div>
+        <a href="./salah.html">Home</a>
+        <a href="./history.html">History</a>
+
+        <button class="signout-btn" id="signoutBtn">
+            <span>🚪</span>
+            Sign Out
+        </button>
+    </nav>
 
 
-    <h2 id="todayDate"></h2>
 
-<div class="prayer-list">
-  <div class="prayer" onclick="openModal('Fajr')">🌙 Fajr</div>
-  <div class="prayer" onclick="openModal('Dhuhr')">☀️ Dhuhr</div>
-  <div class="prayer" onclick="openModal('Asr')">🌤 Asr</div>
-  <div class="prayer" onclick="openModal('Maghrib')">🌇 Maghrib</div>
-  <div class="prayer" onclick="openModal('Isha')">🌙 Isha</div>
-</div>
 
-<!-- Modal -->
-<div id="modal" class="hidden">
-  <h3 id="modalTitle"></h3>
-  <button onclick="saveStatus('Not prayed')">🚫 Not prayed</button>
-  <button onclick="saveStatus('Late')">⏰ Late</button>
-  <button onclick="saveStatus('On time')">✅ On time</button>
-  <button onclick="saveStatus('In jamaah')">🕌 In jamaah</button>
-  <button onclick="closeModal()">Cancel</button>
-</div>
+    <div class="container">
+
+
+
+        <div class="header">
+            <div class="date-main" id="todayDate">Today, 23 July 2025</div>
+            <div class="date-islamic">28 Muharram 1447</div>
+
+            <div class="week-calendar">
+                <div class="day-item">
+                    <div class="day-label">FRI</div>
+                    <div class="day-number">18</div>
+                </div>
+                <div class="day-item">
+                    <div class="day-label">SAT</div>
+                    <div class="day-number">19</div>
+                </div>
+                <div class="day-item">
+                    <div class="day-label">SUN</div>
+                    <div class="day-number">20</div>
+                </div>
+                <div class="day-item">
+                    <div class="day-label">MON</div>
+                    <div class="day-number">21</div>
+                </div>
+                <div class="day-item">
+                    <div class="day-label">TUE</div>
+                    <div class="day-number">22</div>
+                </div>
+                <div class="day-item today">
+                    <div class="day-label">WED</div>
+                    <div class="day-number">23</div>
+                </div>
+                <div class="day-item">
+                    <div class="day-label">THU</div>
+                    <div class="day-number">24</div>
+                </div>
+                <div class="day-item">
+                    <div class="day-label">FRI</div>
+                    <div class="day-number">25</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="date-picker-container">
+            <label for="datePicker">Select Date:</label>
+            <input type="date" id="datePicker" />
+        </div>
+
+        <div class="prayers-section">
+            <div class="prayers-title">Prayers</div>
+
+            <div class="prayer-item" onclick="openModal('Fajr')">
+                <div class="prayer-icon fajr-icon">🌙</div>
+                <div class="prayer-name">Fajr</div>
+                <div class="prayer-status" id="fajr-status">Not set</div>
+            </div>
+
+            <div class="prayer-item" onclick="openModal('Dhuhr')">
+                <div class="prayer-icon dhuhr-icon">☀️</div>
+                <div class="prayer-name">Dhuhr</div>
+                <div class="prayer-status" id="dhuhr-status">Not set</div>
+            </div>
+
+            <div class="prayer-item" onclick="openModal('Asr')">
+                <div class="prayer-icon asr-icon">🌤️</div>
+                <div class="prayer-name">Asr</div>
+                <div class="prayer-status" id="asr-status">Not set</div>
+            </div>
+
+            <div class="prayer-item" onclick="openModal('Maghrib')">
+                <div class="prayer-icon maghrib-icon">🌇</div>
+                <div class="prayer-name">Maghrib</div>
+                <div class="prayer-status" id="maghrib-status">Not set</div>
+            </div>
+
+            <div class="prayer-item" onclick="openModal('Isha')">
+                <div class="prayer-icon isha-icon">🌙</div>
+                <div class="prayer-name">Isha</div>
+                <div class="prayer-status" id="isha-status">Not set</div>
+            </div>
+        </div>
+
+        <!-- <button class="add-button">+</button> -->
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-title" id="modalTitle">Set Prayer Status</div>
+            <div class="status-buttons">
+                <button class="status-btn btn-missed" onclick="saveStatus('Not prayed')">
+                    🚫 Not prayed
+                </button>
+                <button class="status-btn btn-late" onclick="saveStatus('Late')">
+                    ⏰ Late
+                </button>
+                <button class="status-btn btn-ontime" onclick="saveStatus('On time')">
+                    ✅ On time
+                </button>
+                <button class="status-btn btn-jamaah" onclick="saveStatus('In jamaah')">
+                    🕌 In jamaah
+                </button>
+                <button class="status-btn btn-cancel" onclick="closeModal()">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+
 
 
 </body>
 <script type="module" src="salah.js"></script>
+
 </html>
