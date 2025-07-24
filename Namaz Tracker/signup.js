@@ -42,7 +42,7 @@ signUpBtn.addEventListener("click", async () => {
     });
 
     showMessage("Signup!", "successfully");
-    window.location.href = "./Salah.html";
+    window.location.href = "./salah.html";
   } catch (error) {
     showMessage(error.message, "error");
   }
@@ -61,6 +61,6 @@ function showMessage(msg, type) {
 // ✅ Already signed-in user ko direct Salah page bhejo
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    window.location.href = "./Salah.html";
+    window.location.href = "./salah.html";
   }
 });

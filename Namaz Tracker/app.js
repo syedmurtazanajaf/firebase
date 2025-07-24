@@ -11,7 +11,7 @@ let logIn = () => {
             // Signed in 
             const user = userCredential.user;
             console.log("User login")
-            location.href = "./Salah.html";
+            location.href = "./salah.html";
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -32,7 +32,7 @@ onAuthStateChanged(auth, (user) => {
     const uid = user.uid;
     console.log("user exits")
 
-    location.href = "./Salah.html"
+    location.href = "./salah.html"
 
 
     // ...
